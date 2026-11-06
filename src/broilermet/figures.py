@@ -1,4 +1,5 @@
 """Figures 1 to 5 (vector PDF; TIFF at 600 dpi for submission systems that require raster files)."""
+import logging
 import os
 
 import matplotlib
@@ -10,6 +11,8 @@ from matplotlib import rcParams
 from matplotlib.colors import LinearSegmentedColormap
 from matplotlib.patches import Rectangle
 from scipy import stats
+
+logging.getLogger('matplotlib.font_manager').setLevel(logging.ERROR)   # Times New Roman falls back to a metric-compatible serif font
 
 rcParams.update({'font.family': ['Times New Roman', 'Liberation Serif', 'DejaVu Serif'], 'mathtext.fontset': 'custom',
                  'mathtext.rm': 'Liberation Serif', 'mathtext.it': 'Liberation Serif:italic', 'font.size': 8,

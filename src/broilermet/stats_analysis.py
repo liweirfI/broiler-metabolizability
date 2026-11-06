@@ -93,8 +93,11 @@ def repeatability(d, n_boot=N_BOOT):
         y1 = d[t + '_P1'].to_numpy(float)
         y2 = d[t + '_P2'].to_numpy(float)
         r1, sb2, se2 = reml_repeatability(y1, y2)
-        bs = np.array([reml_repeatability(y1[i], y2[i])[0] for i in boot_idx]) if n_boot else np.array([np.nan])
-        lo, hi = np.nanpercentile(bs, [2.5, 97.5])
+        if n_boot:
+            bs = np.array([reml_repeatability(y1[i], y2[i])[0] for i in boot_idx])
+            lo, hi = np.percentile(bs, [2.5, 97.5])
+        else:
+            lo = hi = np.nan
         m = ~np.isnan(y1) & ~np.isnan(y2)
         r = stats.pearsonr(y1[m], y2[m])[0]
         a2, b2 = pd.Series(y1[m]), pd.Series(y2[m])
