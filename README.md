@@ -2,7 +2,7 @@
 
 Data and analysis pipeline for the manuscript
 
-> Li W, Li W, Liu R, Wen J, Guo L, Zhao G. **Repeatability of weekly records and prediction of individual nutrient metabolizability with fewer excreta analyses in broilers.** (submitted to *Poultry Science*)
+> Li W, Li W, Liu R, Wen J, Guo L, Zhao G. **Repeatability of weekly records and prediction of nutrient metabolizability in broiler chickens.** (submitted to *Poultry Science*)
 
 The pipeline reproduces every number, table, and figure of the manuscript and its Supplementary Tables from one input file of weekly records.
 

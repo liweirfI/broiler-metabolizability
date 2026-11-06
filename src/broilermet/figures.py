@@ -175,21 +175,7 @@ def fig_heatmap(summary, outdir):
         ax.axhline(2.5, color=INK2, lw=0.8)
         ax.text(-0.05 if L != 'A' else -0.9, 1.0, L, transform=ax.transAxes, fontsize=11, fontweight='bold',
                 va='bottom', ha='left')
-    cax = fig.add_axes([0.93, 0.25, 0.012, 0.5])
-    nseg = 100                                   # vector colour bar (no embedded bitmap)
-    for k in range(nseg):
-        cax.add_patch(Rectangle((0, k / nseg), 1, 1 / nseg + 0.002, facecolor=HEAT((k + 0.5) / nseg),
-                                edgecolor='none', linewidth=0))
-    cax.set_xlim(0, 1)
-    cax.set_ylim(0, 1)
-    for sp in cax.spines.values():
-        sp.set_visible(False)
-    cax.set_xticks([])
-    cax.yaxis.tick_right()
-    cax.set_yticks([0, 0.5, 1])
-    cax.set_ylabel('$R^2_{CV}$', rotation=0, labelpad=10, va='center')
-    cax.yaxis.set_label_position('right')
-    fig.subplots_adjust(left=0.2, right=0.9, wspace=0.08, bottom=0.08, top=0.9)
+    fig.subplots_adjust(left=0.2, right=0.98, wspace=0.08, bottom=0.08, top=0.9)
     _save(fig, outdir, 'Figure4')
 
 
