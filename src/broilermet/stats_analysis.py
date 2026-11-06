@@ -6,11 +6,11 @@ import numpy as np
 import pandas as pd
 from scipy import optimize, stats
 
-WEEKLY_TRAITS = [('ADFI', 'g/d'), ('ADG', 'g/d'), ('FCR', 'g/g'), ('DEW', 'g/d'), ('GEE', 'kcal/d'), ('CPE', 'g/d'),
+WEEKLY_TRAITS = [('ADFI', 'g/d'), ('ADG', 'g/d'), ('FCR', 'g:g'), ('DEW', 'g/d'), ('GEE', 'kcal/d'), ('CPE', 'g/d'),
                  ('MDM', 'g/d'), ('AMEn', 'kcal/d'), ('MCP', 'g/d'), ('cMDM', '%'), ('cAMEn', '%'), ('cMCP', '%'),
                  ('DMout_per_kg', 'g/kg'), ('Nout_per_kg', 'g/kg')]
 REP_TRAITS = ['ADFI', 'AMEn', 'DEW', 'CPE', 'RFI', 'ADG', 'cAMEn', 'cMDM', 'cMCP', 'FCR']
-GROUP_TRAITS = [('ADFI', 'g/d'), ('ADG', 'g/d'), ('FCR', 'g/g'), ('DEW', 'g/d'), ('GEE', 'kcal/d'), ('CPE', 'g/d'),
+GROUP_TRAITS = [('ADFI', 'g/d'), ('ADG', 'g/d'), ('FCR', 'g:g'), ('DEW', 'g/d'), ('GEE', 'kcal/d'), ('CPE', 'g/d'),
                 ('AMEn', 'kcal/d'), ('MCP', 'g/d'), ('cMDM', '%'), ('cAMEn', '%'), ('cMCP', '%'),
                 ('Nout_per_kg', 'g/kg'), ('BW42', 'g'), ('AbP', '%'), ('BreastP', '%'), ('LegMuscP', '%')]
 BIRD_LEVEL = ('BW42', 'AbP', 'BreastP', 'LegMuscP', 'AbF')

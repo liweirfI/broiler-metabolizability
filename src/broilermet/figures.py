@@ -43,7 +43,7 @@ def _fmtp(p):
 
 
 def fig_week_change(d, outdir):
-    traits = [('ADFI', 'ADFI, g/d', '{:+.1f}'), ('ADG', 'ADG, g/d', '{:+.1f}'), ('FCR', 'FCR, g/g', '{:+.3f}'),
+    traits = [('ADFI', 'ADFI, g/d', '{:+.1f}'), ('ADG', 'ADG, g/d', '{:+.1f}'), ('FCR', 'FCR, g:g', '{:+.3f}'),
               ('cMDM', 'cMDM, %', '{:+.2f}'), ('cAMEn', 'cAMEn, %', '{:+.2f}'), ('cMCP', 'cMCP, %', '{:+.2f}')]
     fig, axs = plt.subplots(2, 3, figsize=(6.9, 4.2))
     for ax, (t, lab, fmt), L in zip(axs.flat, traits, 'ABCDEF'):
@@ -71,7 +71,7 @@ def fig_week_scatter(d, outdir):
     e2 = d.RFI_P2 <= d.RFI_P2.median()
     ok = d.RFI_P1.notna() & d.RFI_P2.notna()
     both, neither, changed = ok & e1 & e2, ok & ~e1 & ~e2, ok & (e1 != e2)
-    tr = [('ADFI', 'g/d'), ('FCR', 'g/g'), ('RFI', 'g/d'), ('cMDM', '%'), ('cAMEn', '%'), ('cMCP', '%')]
+    tr = [('ADFI', 'g/d'), ('FCR', 'g:g'), ('RFI', 'g/d'), ('cMDM', '%'), ('cAMEn', '%'), ('cMCP', '%')]
     fig, axs = plt.subplots(2, 3, figsize=(6.9, 4.5))
     for ax, (t, u), L in zip(axs.flat, tr, 'ABCDEF'):
         a, b = d[t + '_P1'], d[t + '_P2']
